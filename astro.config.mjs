@@ -54,6 +54,6 @@ export default defineConfig({
 			},
 		},
 	},
-	site: 'https://baic.alexsab.ru',
+	site: 'https://baic-krasnodar.ru',
 	base: "/"
 });
