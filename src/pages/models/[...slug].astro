@@ -70,7 +70,14 @@ const salonsPhone = salons.map((salon: any) => salon.phone).filter(phone => phon
     <div class="container">
       <FeedbackForm 
         title="Записаться на тест-драйв" 
-        imageUrl={model.colors[getRandomInt(0, model.colors.length)].carImage} 
+        imageUrl={sections.length > 0
+          ? (sections[1]?.images && sections[1].images.length > 0 ? sections[1].images[0].url : null) || 
+            (sections[2]?.images && sections[2].images.length > 0 ? sections[2].images[0].url : null) || 
+            model.thumb
+          : (model.colors && model.colors.length > 0) 
+            ? model.colors[getRandomInt(0, model.colors.length)].carImage 
+            : model.thumb
+        } 
       />
     </div>
   </section>
